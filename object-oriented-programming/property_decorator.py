@@ -6,13 +6,7 @@ Author: Khoi VN
 Date: 15/10/2023
 """
 
-try:
-    import sys
-    sys.path.append('.')
-    from src.logger import Logger
-except ModuleNotFoundError:
-    sys.path.append('..')
-    from src.logger import Logger
+from src.logger import Logger
 
 
 logger = Logger.get_logger(__name__)
@@ -29,28 +23,28 @@ class UserProperty:
 
     @fullname.setter
     def fullname(self, fullname: str):
-        self._firstname, self._lastname = fullname.split(' ')
+        self._firstname, self._lastname = fullname.split(" ")
 
     @fullname.deleter
     def fullname(self):
         self._firstname, self._lastname = None, None
 
 
-user_property = UserProperty('Khoi', 'VN')
-assert user_property._firstname == 'Khoi'
-assert user_property._lastname == 'VN'
+user_property = UserProperty("Khoi", "VN")
+assert user_property._firstname == "Khoi"
+assert user_property._lastname == "VN"
 logger.info(f"UserProperty: {user_property._firstname} - {user_property._lastname}")
 # UserProperty: Khoi - VN
-assert user_property.fullname == 'Khoi VN'
+assert user_property.fullname == "Khoi VN"
 logger.info(f"UserProperty: {user_property.fullname}")
 # UserProperty: Khoi VN
 
-user_property.fullname = 'Kelvin VN'
-assert user_property._firstname == 'Kelvin'
-assert user_property._lastname == 'VN'
+user_property.fullname = "Kelvin VN"
+assert user_property._firstname == "Kelvin"
+assert user_property._lastname == "VN"
 logger.info(f"UserProperty: {user_property._firstname} - {user_property._lastname}")
 # UserProperty: Kelvin - VN
-assert user_property.fullname == 'Kelvin VN'
+assert user_property.fullname == "Kelvin VN"
 logger.info(f"UserProperty: {user_property.fullname}")
 # UserProperty: Kelvin VN
 

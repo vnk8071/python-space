@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  backend:
+    container_name: backend_v0
+    image: backend:v0
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - cache:/data
+    networks:
+      - codebase-network
+    restart: always
+
+  redis:
+    container_name: redis_v0
+    image: redis:v0
+    build:
+      context: .
+      dockerfile: docker/redis/Dockerfile
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - cache:/data
+    networks:
+      - codebase-network
+    restart: always
+
+networks:
+  codebase-network:
+
+volumes:
+  cache:
+    driver: local

@@ -21,13 +21,7 @@ Date: 15/10/2023
 """
 
 from typing import List
-try:
-    import sys
-    sys.path.append('.')
-    from src.logger import Logger
-except ModuleNotFoundError:
-    sys.path.append('..')
-    from src.logger import Logger
+from src.logger import Logger
 
 
 logger = Logger.get_logger(__name__)
@@ -43,14 +37,14 @@ class UserImmutable:
         self.groups = groups
 
 
-khoivn = UserImmutable('Khoi', 'VN')
-kelvin = UserImmutable('Kelvin', 'VN')
+khoivn = UserImmutable("Khoi", "VN")
+kelvin = UserImmutable("Kelvin", "VN")
 logger.info(f"Group of khoivn: {khoivn.groups}")  # []
 logger.info(f"Group of kelvin: {kelvin.groups}")  # []
 
-khoivn.groups.append('admin')
-khoivn.groups.append('user')
-khoivn.groups.append('guest')
+khoivn.groups.append("admin")
+khoivn.groups.append("user")
+khoivn.groups.append("guest")
 
 # ['admin', 'user', 'guest']
 logger.info(f"Group of khoivn: {khoivn.groups} - {hex(id(khoivn))}")
@@ -68,14 +62,14 @@ class UserMutable:
         self.groups = groups or []
 
 
-khoivn = UserMutable('Khoi', 'VN')
-kelvin = UserMutable('Kelvin', 'VN')
+khoivn = UserMutable("Khoi", "VN")
+kelvin = UserMutable("Kelvin", "VN")
 logger.info(f"Group of khoivn: {khoivn.groups}")  # []
 logger.info(f"Group of kelvin: {kelvin.groups}")  # []
 
-khoivn.groups.append('admin')
-khoivn.groups.append('user')
-khoivn.groups.append('guest')
+khoivn.groups.append("admin")
+khoivn.groups.append("user")
+khoivn.groups.append("guest")
 
 # ['admin', 'user', 'guest']
 logger.info(f"Group of khoivn: {khoivn.groups} - {hex(id(khoivn))}")

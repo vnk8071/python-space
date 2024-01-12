@@ -9,13 +9,7 @@ Date: 15/10/2023
 
 from dataclasses import dataclass
 import json
-try:
-    import sys
-    sys.path.append('.')
-    from src.logger import Logger
-except ModuleNotFoundError:
-    sys.path.append('..')
-    from src.logger import Logger
+from src.logger import Logger
 
 
 logger = Logger.get_logger(__name__)

@@ -11,13 +11,7 @@ Date: 15/10/2023
 """
 
 from dataclasses import dataclass
-try:
-    import sys
-    sys.path.append('.')
-    from src.logger import Logger
-except ModuleNotFoundError:
-    sys.path.append('..')
-    from src.logger import Logger
+from src.logger import Logger
 
 
 logger = Logger.get_logger(__name__)
@@ -27,7 +21,6 @@ logger = Logger.get_logger(__name__)
 # User static method
 # --------------------------------------------------
 class UserStaticMethod:
-
     def __init__(self, firstname: str, lastname: str):
         self.firstname = firstname
         self.lastname = lastname
@@ -37,12 +30,14 @@ class UserStaticMethod:
 
     def load_json(self, data):
         import json
+
         data_json = json.loads(data)
         return UserStaticMethod(**data_json)
 
     @staticmethod
     def load_json_static_method(data):
         import json
+
         data_json = json.loads(data)
         return UserStaticMethod(**data_json)
 
@@ -73,6 +68,7 @@ logger.info(f"UserStaticMethod: {UserStaticMethod.load_json_static_method(data)}
 # User static method dataclass
 # --------------------------------------------------
 
+
 @dataclass
 class UserStaticMethodDataclass:
     firstname: str
@@ -81,10 +77,13 @@ class UserStaticMethodDataclass:
     @staticmethod
     def load_json_static_method(data):
         import json
+
         data_json = json.loads(data)
         return UserStaticMethodDataclass(**data_json)
 
 
 UserStaticMethodDataclass.load_json_static_method(data)
-logger.info(f"UserStaticMethodDataclass: {UserStaticMethodDataclass.load_json_static_method(data)}")
+logger.info(
+    f"UserStaticMethodDataclass: {UserStaticMethodDataclass.load_json_static_method(data)}"
+)
 # UserStaticMethodDataclass: UserStaticMethodDataclass(firstname='Khoi', lastname='VN')

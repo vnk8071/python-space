@@ -10,31 +10,26 @@ Author: Khoi VN
 Date: 15/10/2023
 """
 
-try:
-    import sys
-    sys.path.append('.')
-    from src.logger import Logger
-except ModuleNotFoundError:
-    sys.path.append('..')
-    from src.logger import Logger
+from src.logger import Logger
 
 
 logger = Logger.get_logger(__name__)
+
 
 # --------------------------------------------------
 # User slots
 # --------------------------------------------------
 class UserSlots:
-    __slots__ = ('firstname', 'lastname')
+    __slots__ = ("firstname", "lastname")
 
     def __init__(self, firstname: str, lastname: str):
         self.firstname = firstname
         self.lastname = lastname
 
 
-user = UserSlots('Khoi', 'VN')
-assert user.firstname == 'Khoi'
-assert user.lastname == 'VN'
+user = UserSlots("Khoi", "VN")
+assert user.firstname == "Khoi"
+assert user.lastname == "VN"
 logger.info(f"UserSlots: {user.firstname} - {user.lastname}")  # Khoi - VN
 
 try:
@@ -44,7 +39,7 @@ except AttributeError as e:
 
 
 class UserSlotsInitArgs:
-    __slots__ = ('firstname', 'lastname')
+    __slots__ = ("firstname", "lastname")
 
     def __init__(self, firstname: str, lastname: str, age: int):
         self.firstname = firstname
@@ -53,7 +48,7 @@ class UserSlotsInitArgs:
 
 
 try:
-    user_init_args = UserSlotsInitArgs('Khoi', 'VN', 23)
+    user_init_args = UserSlotsInitArgs("Khoi", "VN", 23)
 except AttributeError as e:
     logger.error(e)  # 'UserSlotsInitArgs' object has no attribute 'age'
 
@@ -62,7 +57,7 @@ except AttributeError as e:
 # User slots dict
 # --------------------------------------------------
 class UserSlotsDict:
-    __slots__ = ('firstname', 'lastname', '__dict__')
+    __slots__ = ("firstname", "lastname", "__dict__")
 
     def __init__(self, firstname: str, lastname: str, age: int):
         self.firstname = firstname
@@ -70,15 +65,17 @@ class UserSlotsDict:
         self.age = age
 
 
-user_dict = UserSlotsDict('Khoi', 'VN', 23)
-assert user_dict.firstname == 'Khoi'
-assert user_dict.lastname == 'VN'
+user_dict = UserSlotsDict("Khoi", "VN", 23)
+assert user_dict.firstname == "Khoi"
+assert user_dict.lastname == "VN"
 assert user_dict.age == 23
-logger.info(f"UserSlotsDict: {user_dict.firstname} - {user_dict.lastname} - {user_dict.age}")
+logger.info(
+    f"UserSlotsDict: {user_dict.firstname} - {user_dict.lastname} - {user_dict.age}"
+)
 # UserSlotsDict: Khoi - VN - 23
 
-user_dict.address = 'Quang Ngai'
-assert user_dict.address == 'Quang Ngai'
-assert user_dict.__dict__ == {'age': 23, 'address': 'Quang Ngai'}
+user_dict.address = "Quang Ngai"
+assert user_dict.address == "Quang Ngai"
+assert user_dict.__dict__ == {"age": 23, "address": "Quang Ngai"}
 logger.info(user_dict.__dict__)  # {'age': 23, 'address': 'Quang Ngai'}
 logger.info(user_dict.__slots__)  # ('firstname', 'lastname', '__dict__')

@@ -11,13 +11,7 @@ Date: 15/10/2023
 
 from typing import ClassVar
 from dataclasses import dataclass
-try:
-    import sys
-    sys.path.append('.')
-    from src.logger import Logger
-except ModuleNotFoundError:
-    sys.path.append('..')
-    from src.logger import Logger
+from src.logger import Logger
 
 
 logger = Logger.get_logger(__name__)
@@ -31,11 +25,11 @@ class UserClassVar:
     pass
 
 
-UserClassVar.firstname = 'Khoi'
-UserClassVar.lastname = 'VN'
+UserClassVar.firstname = "Khoi"
+UserClassVar.lastname = "VN"
 
-assert UserClassVar.firstname == 'Khoi'
-assert UserClassVar.lastname == 'VN'
+assert UserClassVar.firstname == "Khoi"
+assert UserClassVar.lastname == "VN"
 
 logger.info(f"UserClassVar: {UserClassVar.firstname} {UserClassVar.lastname}")
 
@@ -57,7 +51,8 @@ class UserInstanceVar:
 
 
 logger.info(
-    f"UserInstanceVar: {UserInstanceVar().firstname} {UserInstanceVar().lastname}")
+    f"UserInstanceVar: {UserInstanceVar().firstname} {UserInstanceVar().lastname}"
+)
 
 """ Class variables and instance variables
 """
@@ -65,12 +60,12 @@ logger.info(
 
 @dataclass
 class UserClassVarInstanceVar:
-    firstname: ClassVar[str] = 'Khoi'
-    lastname: ClassVar[str] = 'VN'
+    firstname: ClassVar[str] = "Khoi"
+    lastname: ClassVar[str] = "VN"
 
     def __init__(self):
-        self.firstname = 'Khoi'
-        self.lastname = 'VN'
+        self.firstname = "Khoi"
+        self.lastname = "VN"
 
 
 """Class variables vs instance variables
@@ -78,33 +73,33 @@ class UserClassVarInstanceVar:
 
 
 class User:
-    groups = ['admin', 'user', 'guest']
+    groups = ["admin", "user", "guest"]
 
 
 khoivn = User()
 kelvin = User()
-assert khoivn.groups == ['admin', 'user', 'guest']
-assert kelvin.groups == ['admin', 'user', 'guest']
+assert khoivn.groups == ["admin", "user", "guest"]
+assert kelvin.groups == ["admin", "user", "guest"]
 logger.info(f"Group of khoivn: {khoivn.groups}")  # ['admin', 'user', 'guest']
 logger.info(f"Group of kelvin: {kelvin.groups}")  # ['admin', 'user', 'guest']
 
 
-User.groups = ['super_user']
-assert khoivn.groups == ['super_user']
-assert kelvin.groups == ['super_user']
+User.groups = ["super_user"]
+assert khoivn.groups == ["super_user"]
+assert kelvin.groups == ["super_user"]
 logger.info(f"Group of khoivn: {khoivn.groups}")  # ['super_user']
 logger.info(f"Group of kelvin: {kelvin.groups}")  # ['super_user']
 
-khoivn.groups = ['admin']
-assert khoivn.groups == ['admin']
-assert kelvin.groups == ['super_user']
+khoivn.groups = ["admin"]
+assert khoivn.groups == ["admin"]
+assert kelvin.groups == ["super_user"]
 logger.info(f"Group of khoivn: {khoivn.groups}")  # ['admin']
 logger.info(f"Group of kelvin: {kelvin.groups}")  # ['super_user']
 
 
-User.groups = ['guest']
-assert khoivn.groups == ['admin']
-assert kelvin.groups == ['guest']
+User.groups = ["guest"]
+assert khoivn.groups == ["admin"]
+assert kelvin.groups == ["guest"]
 logger.info(f"Group of khoivn: {khoivn.groups}")  # ['super_user', 'admin']
 logger.info(f"Group of kelvin: {kelvin.groups}")  # ['guest']
 
@@ -113,15 +108,15 @@ logger.info(f"Group of kelvin: {kelvin.groups}")  # ['guest']
 # User mechanism
 # --------------------------------------------------
 class UserMechanism:
-    firstname = 'Khoi'
-    lastname = 'VN'
+    firstname = "Khoi"
+    lastname = "VN"
 
     def __init__(self, firstname, lastname):
         self.firstname = firstname
         self.lastname = lastname
 
 
-khoivn = UserMechanism('Khoi', 'VN')
-assert vars(khoivn) == {'firstname': 'Khoi', 'lastname': 'VN'}
+khoivn = UserMechanism("Khoi", "VN")
+assert vars(khoivn) == {"firstname": "Khoi", "lastname": "VN"}
 logger.info(f"vars: {vars(khoivn)}")
 # {'firstname': 'Khoi', 'lastname': 'VN'}
