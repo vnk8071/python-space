@@ -1,4 +1,9 @@
-# Python Codebase
+---
+sidebar_label: 'Codebase'
+sidebar_position: 1
+---
+
+# Codebase
 
 ## 1. Introduction
 - This is a code base for python. It contains some useful functions and classes.

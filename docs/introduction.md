@@ -8,8 +8,9 @@ sidebar_position: 1
 ## Introduction
 This repository is a collection of Python knowledge that I have learned from various sources. The main purpose of this repository is to help me to remember the basic Python knowledge that I have learned.
 1. [Object Oriented Programming](https://python3.info/advanced/index.html#oop)
-2. [Refactor Code](https://refactoring.guru/refactoring/techniques)
-3. [Design Patterns](https://refactoring.guru/design-patterns/python)
+2. Codebase
+3. [Refactor Code](https://refactoring.guru/refactoring/techniques)
+4. [Design Patterns](https://refactoring.guru/design-patterns/python)
 
 ## Object Oriented Programming
 
