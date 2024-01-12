@@ -11,8 +11,13 @@ This repository is a collection of Python knowledge that I have learned from var
 2. Codebase
 3. [Refactor Code](https://refactoring.guru/refactoring/techniques)
 4. [Design Patterns](https://refactoring.guru/design-patterns/python)
+5. [Git tutorial](https://www.udemy.com/course/master-git-and-github-in-5-days-go-from-zero-to-hero/)
 
 ## Object Oriented Programming
+The content cover attributes, methods, inheritance, polymorphism, encapsulation, abstraction, etc.
+
+Link repo: https://github.com/vnk8071/python-space/tree/main/object-oriented-programming
+Link doc: https://khoispace.io.vn/python-space/docs/oop
 
 ## Codebase
 - This is a code base for python. It contains some useful functions and classes.
@@ -22,6 +27,12 @@ This repository is a collection of Python knowledge that I have learned from var
 - Structure repository in production.
 
 Link repo: https://github.com/vnk8071/python-space/tree/main/codebase
+Link doc: https://khoispace.io.vn/python-space/docs/codebase
+
+## Git tutorial
+- This is a tutorial for Git and Github. It contains some useful commands and tips.
+
+Link repo:
 
 ## Contact
 - KhoiVN - [@linkedin-khoivn8071](https://www.linkedin.com/in/khoivn8071) - nguyenkhoi8071@gmail.com
