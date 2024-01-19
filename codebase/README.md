@@ -1,18 +1,20 @@
 # Python Codebase
 
 ## 1. Introduction
+
 - This is a code base for python. It contains some useful functions and classes.
-
 - Using `@property`, `@classmethod` and `@staticmethod` to create properties, class methods and static methods.
-
 - Structure repository in production.
 
 Link repo: https://github.com/vnk8071/python-space/tree/main/codebase
 
 ## 2. Technical Details
+
 ### 2.1. Structure
+
 The structure of this code base is as follows:
-```
+
+```tree
 .
 ├── Makefile
 ├── README.md
@@ -60,6 +62,7 @@ The structure of this code base is as follows:
 ```
 
 ### 2.2. Technologies
+
 | # | Name | Description |
 |---|------|-------------|
 | 1 | Python | Python is an interpreted, high-level and general-purpose programming language. |
@@ -75,8 +78,8 @@ The structure of this code base is as follows:
 | 11 | Logging | The tool for logging. |
 | 12 | Github Action | The tool for CI/CD. |
 
-
 ### 2.3. Details of Technologies
+
 1. **Flake8**: The tool for style guide enforcement. It is used to check the code style.
 2. **Pytest**: The tool for unit test. It is used to test the code.
 3. **Makefile**: The tool for automation. It is used to automate the process of code style checking, unit testing, and code formatting.
@@ -91,6 +94,7 @@ The structure of this code base is as follows:
 12. **.gitignore**: The file for git ignore. It is used to ignore the files and folders.
 
 ### 2.4. Details of Folders
+
 1. **api**: The folder for API. It is used to store the API.
 2. **core**: The folder for core. It is used to store the core like config and exception.
 3. **module**: The folder for module. It is used to store the modules like cache.
@@ -98,20 +102,26 @@ The structure of this code base is as follows:
 5. **tests**: The folder for unit test. It is used to store the unit test.
 
 ## 3. Getting Started
+
 ### 3.1. Prerequisites
+
 Using conda or pip to install the packages in requirements.txt.
-```
+
+```make
 make install
 ```
 
 ### 3.2. Build docker
-```
+
+```make
 make docker-compose-up
 ```
+
 ![build_docker_compose](images/docker_compose.png)
 
 ### 3.3. Web API
-```
+
+```bash
 http://localhost:8000/docs
 ```
 
@@ -122,6 +132,7 @@ http://localhost:8000/docs
 ![request_root](images/request_root.png)
 
 - Request add and get with curl
+
 ```curl
 curl -X 'POST' \
   'http://localhost:8000/cache' \
@@ -129,6 +140,7 @@ curl -X 'POST' \
   -d ''
 ```
 Response
+
 ```json
 {
   "cache": "Added value to cache successfully"
@@ -142,6 +154,7 @@ curl -X 'GET' \
 ```
 
 Response
+
 ```json
 {
   "cache": [
@@ -154,12 +167,14 @@ Response
 ```
 
 ## 4. Lint
+
 ```make
 make lint
 ```
 
 Result
-```
+
+```bash
 flake8 --max-line-length=120 --exclude=venv --verbose
 flake8.checker            MainProcess    249 INFO     Making checkers
 flake8.main.application   MainProcess    721 INFO     Finished running
@@ -168,12 +183,14 @@ flake8.main.application   MainProcess    722 INFO     Found a total of 1 violati
 ```
 
 ## 5. Test
+
 ```make
 make test
 ```
 
 Result
-```
+
+```bash
 pytest --verbose tests
 ================================================================ test session starts ================================================================
 platform darwin -- Python 3.10.13, pytest-7.4.2, pluggy-1.3.0 -- /Users/macos/miniconda3/envs/codebase/bin/python
@@ -191,15 +208,18 @@ tests/test_redis.py::test_redis_cache PASSED                                    
 
 ================================================================= 6 passed in 0.89s =================================================================
 ```
+
 ![unit_test](images/unit_test.png)
 
 ## 6. Code Formatting
+
 ```make
 make format
 ```
 
 Result
-```
+
+```bash
 autopep8 --verbose --in-place --aggressive --aggressive --max-line-length=120 **/*.py
 read config path: /Users/macos/projects/Kelvin/ML_DevOps_Engineer/ml-production/examples/code_base/.flake8
 enable config: section=flake8, key=exclude, value=
@@ -255,5 +275,16 @@ enable config: section=flake8, key=max-line-length, value=120
 --->  0 issue(s) to fix {}
 ```
 
+## Tox
+
+Add code coverage to tox.ini
+
+```bash
+tox run
+```
+
+![tox](images/tox.png)
+
 ## Continuous Integration
+
 Github Action in `.github/workflows/ci.yml`
