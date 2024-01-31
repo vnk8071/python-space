@@ -1,5 +1,4 @@
 import redis
-
 from src.module.cache.base import CacheBase
 
 

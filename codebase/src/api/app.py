@@ -1,10 +1,10 @@
-from typing import Dict, Any
-from fastapi import FastAPI
+from typing import Any, Dict
 
+from fastapi import FastAPI
 from src.core.config import settings
+from src.module.cache.redis import RedisCache
 from src.utils.logger import Logger
 from src.utils.utils import get_current_timestamp
-from src.module.cache.redis import RedisCache
 
 logger = Logger.get_logger(__name__)
 

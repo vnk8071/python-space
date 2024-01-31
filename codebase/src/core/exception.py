@@ -1,6 +1,6 @@
 # Define exception classes for the core module.
-from typing import Optional
 import http
+from typing import Optional
 
 
 class CustomException(Exception):

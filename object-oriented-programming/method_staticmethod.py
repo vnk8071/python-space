@@ -11,8 +11,8 @@ Date: 15/10/2023
 """
 
 from dataclasses import dataclass
-from src.logger import Logger
 
+from src.logger import Logger
 
 logger = Logger.get_logger(__name__)
 

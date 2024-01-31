@@ -17,6 +17,7 @@ const sidebars = {
   sideBar: [
     'introduction',
     'codebase',
+    'clean_code',
     'oop',
     'git_tutorial'
   ],

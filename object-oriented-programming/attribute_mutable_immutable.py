@@ -21,8 +21,8 @@ Date: 15/10/2023
 """
 
 from typing import List
-from src.logger import Logger
 
+from src.logger import Logger
 
 logger = Logger.get_logger(__name__)
 

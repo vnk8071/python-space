@@ -12,7 +12,6 @@ Date: 15/10/2023
 
 from src.logger import Logger
 
-
 logger = Logger.get_logger(__name__)
 
 

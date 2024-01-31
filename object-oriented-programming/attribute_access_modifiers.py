@@ -17,7 +17,6 @@ from dataclasses import dataclass
 
 from src.logger import Logger
 
-
 logger = Logger.get_logger(__name__)
 
 
