@@ -6,9 +6,10 @@ This repository is a collection of Python knowledge that I have learned from var
 
 1. [Object Oriented Programming](https://python3.info/advanced/index.html#oop)
 2. Codebase
-3. [Refactor Code](https://refactoring.guru/refactoring/techniques)
-4. [Design Patterns](https://refactoring.guru/design-patterns/python)
-5. [Git tutorial](https://www.udemy.com/course/master-git-and-github-in-5-days-go-from-zero-to-hero/)
+3. Clean Code
+4. [Refactor Code](https://refactoring.guru/refactoring/techniques)
+5. [Design Patterns](https://refactoring.guru/design-patterns/python)
+6. [Git tutorial](https://www.udemy.com/course/master-git-and-github-in-5-days-go-from-zero-to-hero/)
 
 ## Object Oriented Programming
 
@@ -26,12 +27,19 @@ Link doc: https://khoispace.io.vn/python-space/docs/oop
 Link repo: https://github.com/vnk8071/python-space/tree/main/codebase
 Link doc: https://khoispace.io.vn/python-space/docs/codebase
 
+## Clean Code
+
+- This is a tutorial for Clean Code. It contains some useful concepts and tips.
+
+Link repo: https://github.com/vnk8071/python-space/tree/main/clean-code
+Link doc: https://khoispace.io.vn/python-space/docs/clean-code
+
 ## Git tutorial
 
 - This is a tutorial for Git and Github. It contains some useful commands and tips.
 
 Link repo: https://github.com/vnk8071/python-space/tree/main/git-tutorial
-Link doc: https://khoispace.io.vn/python-space/docs/oop
+Link doc: https://khoispace.io.vn/python-space/docs/git-tutorial
 
 ## Contact
 

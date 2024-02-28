@@ -19,7 +19,8 @@ const sidebars = {
     'codebase',
     'clean_code',
     'oop',
-    'git_tutorial'
+    'git_tutorial',
+    'machine_learning_pipeline',
   ],
 };
 
