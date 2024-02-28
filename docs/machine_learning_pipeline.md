@@ -1,4 +1,9 @@
-# End-to-end Machine Learning Pipeline
+---
+sidebar_label: 'Machine Learning Pipeline'
+sidebar_position: 1
+---
+
+# Machine Learning Pipeline
 
 ## Introduction
 This example demonstrates how to build an end-to-end machine learning pipeline using MLflow, Hydra and BentoML. The pipeline consists of the following steps:
@@ -111,8 +116,8 @@ python random_forest.py --train_data data_train.csv:latest \
 wandb: Run summary:
 wandb: AUC 0.9542
 ```
-![feature_importance](./results/feature_importance.png)
-![confusion_matrix](./results/confusion_matrix.png)
+![feature_importance](../machine_learning_pipeline/results/feature_importance.png)
+![confusion_matrix](../machine_learning_pipeline/results/confusion_matrix.png)
 
 ### Step 6: Deploy model with BentoML
 
@@ -122,8 +127,8 @@ bentoml serve service:GenreClassifier
 
 API: `http://127.0.0.1:3000/api/predict`
 
-![bentoml_ui](./results/bentoml_ui.png)
-![bentoml_inference](./results/bentoml_inference.png)
+![bentoml_ui](../machine_learning_pipeline/results/bentoml_ui.png)
+![bentoml_inference](../machine_learning_pipeline/results/bentoml_inference.png)
 
 ### Step 7: Containerize Bento with Docker
 
@@ -135,4 +140,4 @@ docker run -p 3000:3000 genre_classifier serve
 
 Note: Config in `bentofile.yaml`
 
-![bentoml_containerize](./results/bentoml_containerize.png)
+![bentoml_containerize](../machine_learning_pipeline/results/bentoml_containerize.png)
