@@ -1,0 +1,9 @@
+service: 'service:GenreClassifier'
+labels:
+  owner: KhoiVN
+  project: Machine Learning Classification
+include:
+  - results/
+  - '*.py'
+python:
+  requirements_txt: requirements.txt
